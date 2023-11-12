@@ -5,6 +5,12 @@
 
 #        metodos
 #   metodo para o menu
+
+ADICIONAR_UM_FILME = 1
+VER_FILMES = 2
+ESCOLHER_FILME = 3
+SAIR = 4
+
 def menu()
     puts
     puts '-=' * 18 + '-'
@@ -34,11 +40,11 @@ filmes = []
 
 
 loop do 
-    if opcao == 1
+    if opcao == ADICIONAR_UM_FILME
         filmes << adicionar_filme()
         quebra_de_linha()
         puts "O filme: #{filmes.last} foi adicionado com sucesso!"
-    elsif opcao == 2
+    elsif opcao == VER_FILMES
         if filmes.empty?
             quebra_de_linha()
             puts 'A lista de filmes está vaiza! Adicione um filme.'
@@ -48,12 +54,12 @@ loop do
         puts "Lista de filmes: #{filmes}"
         quebra_de_linha()
         end
-    elsif opcao == 3
+    elsif opcao == ESCOLHER_FILME
         filme_escolhido = filmes[rand(filmes.length())]
         quebra_de_linha()
         puts  "O filme escolhido foi: #{filme_escolhido}"
         quebra_de_linha()
-    elsif opcao == 4
+    elsif opcao == SAIR
         puts
         puts 'Obrigado por usar o Desparadoxiador, até logo!'
         puts
